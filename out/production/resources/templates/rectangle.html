@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div>
+    <form method="post" action="rectangle">
+        <input type="text" name="sideA" placeholder="Введите сторону A"/>
+        <input type="text" name="sideB" placeholder="Введите сторону B"/>
+        <button type="submit">Вычислить</button>
+    </form>
+</div>
+<div>
+    <p th:text="${squareRectangle}"/>
+</div>
+<div>
+    <a href="/main">На главную страницу</a>
+</div>
+</body>
+</html>
