@@ -1,0 +1,9 @@
+language: groovy
+jdk:
+ - oraclejdk8
+branches:
+ only:
+ - master
+
+ before_install:
+  - chmod +x gradlew
