@@ -34,8 +34,9 @@ public class SquareController {
             double sideADouble = Double.parseDouble(sideA);
             double sideBDouble = Double.parseDouble(sideB);
             double resultDouble = sideADouble*sideBDouble;
-            String resultString = String.valueOf(resultDouble);
-            model.addAttribute("squareRectangle",resultString);
+//            String resultString = String.valueOf(resultDouble);
+            String resultFormatString = String.format("%.1f", resultDouble);
+            model.addAttribute("squareRectangle",resultFormatString);
         } else {
             model.addAttribute("squareRectangle","Введите коректнные значения");
         }
@@ -47,8 +48,9 @@ public class SquareController {
         if (radius != null && !radius.isEmpty()){
             double radiusDouble = Double.parseDouble(radius);
             double resultDouble = Math.PI*radiusDouble*radiusDouble;
-            String resultString = String.valueOf(resultDouble);
-            model.addAttribute("squareCircle",resultString);
+//            String resultString = String.valueOf(resultDouble);
+            String resultFormatString = String.format("%.1f", resultDouble);
+            model.addAttribute("squareCircle",resultFormatString);
         } else {
             model.addAttribute("squareCircle","Введите коректнные значения");
         }

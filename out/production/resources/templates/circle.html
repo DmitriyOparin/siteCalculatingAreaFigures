@@ -1,18 +1,18 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
+    <title>Расчет площади окружности</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
 <div>
     <form method="post" action="circle">
         <input type="text" name="radius" placeholder="Введите радиус"/>
-        <button type="submit">Вычислить</button>
+        <button type="submit" name="calculate">Вычислить</button>
     </form>
 </div>
 <div>
-    <p th:text="${squareCircle}"/>
+    <p name="result" th:text="${squareCircle}"/>
 </div>
 <div>
     <a href="/main">На главную страницу</a>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
+    <title>Расчет площади прямоугольника</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
@@ -9,11 +9,11 @@
     <form method="post" action="rectangle">
         <input type="text" name="sideA" placeholder="Введите сторону A"/>
         <input type="text" name="sideB" placeholder="Введите сторону B"/>
-        <button type="submit">Вычислить</button>
+        <button type="submit" name="calculate">Вычислить</button>
     </form>
 </div>
 <div>
-    <p th:text="${squareRectangle}"/>
+    <p name="result" th:text="${squareRectangle}"/>
 </div>
 <div>
     <a href="/main">На главную страницу</a>
