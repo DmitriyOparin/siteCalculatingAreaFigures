@@ -17,3 +17,13 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.1.4.RELEASE'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
 }
+
+task hello {
+    doLast {
+        println 'Hello Gradle'
+    }
+}
+
+test {
+    exclude '**/*'
+}
