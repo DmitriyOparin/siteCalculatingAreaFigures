@@ -7,4 +7,3 @@ branches:
 
  script:
  - ./gradlew assemble
- - ./gradlew check
