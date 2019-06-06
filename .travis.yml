@@ -4,3 +4,7 @@ jdk:
 branches:
  only:
  - master
+
+ script:
+ - ./gradlew assemble
+ - ./gradlew check
