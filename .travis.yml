@@ -7,7 +7,7 @@ branches:
   only:
     - master
 script:
-  - ./gradlew build
+  - ./gradlew build -x test
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock

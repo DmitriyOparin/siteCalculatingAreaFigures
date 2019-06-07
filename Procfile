@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar build/libs/diplom-1.0-SNAPSHOT.jar -Dserver.port=$PORT $JAR_OPTS
+java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/*.jar
