@@ -56,7 +56,6 @@ public class SquareController {
         }
         return "circle";
     }
-
 // comment for travis, you can to delete
 
 }

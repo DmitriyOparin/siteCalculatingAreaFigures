@@ -6,6 +6,7 @@ import ru.ngtu.ci.pages.CirclePage;
 import ru.ngtu.ci.pages.MainPage;
 import ru.ngtu.ci.pages.RectanglePage;
 
+
 public class Application {
     private WebDriver driver;
 

@@ -1,10 +1,9 @@
 package ru.ngtu.ci.tests;
 
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import ru.ngtu.ci.app.Application;
+
 
 public class TestBase {
     public static Application app;
