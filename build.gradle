@@ -2,6 +2,9 @@ group 'ru.ngtu.ci'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'ru.ngtu.ci.Application'
 
 sourceCompatibility = 1.8
 
