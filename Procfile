@@ -1,1 +1,2 @@
-web: java $JAVA_OPTS -Dserver.port=$PORT -jar build/*.jar -Dspring.profiles.active=prod
+java $JAVA_OPTS -jar build/libs/diplom-1.0-SNAPSHOT.jar --server.port=$PORT $JAR_OPTS
+heroku deploy:jar -j build/libs/diplom-1.0-SNAPSHOT.jar -i Procfile --app
