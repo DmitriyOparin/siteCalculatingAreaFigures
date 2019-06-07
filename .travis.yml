@@ -7,11 +7,6 @@ branches:
   only:
     - master
 
-script:
-  - ./gradlew assemble
-  - ./gradlew check
-
-
 # разворачивание на heroku
 deploy:
   provider: heroku
@@ -25,4 +20,4 @@ notifications:
     recipients:
       - www.odo6@yandex.ru
     on_success: never
-    on_failure: always
+    on_failure: never #always
