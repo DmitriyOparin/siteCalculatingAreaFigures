@@ -23,7 +23,3 @@ task hello {
         println 'Hello Gradle'
     }
 }
-
-test {
-    exclude '**/*'
-}
