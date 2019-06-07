@@ -3,6 +3,14 @@ install: true
 
 jdk:
   - oraclejdk8
+branches:
+  only:
+    - master
+
+script:
+  - ./gradlew assemble
+  - ./gradlew check
+
 
 # разворачивание на heroku
 deploy:
