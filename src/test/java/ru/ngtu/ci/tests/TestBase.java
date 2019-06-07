@@ -10,12 +10,14 @@ public class TestBase {
 
     @BeforeClass
     public static void setUp() {
-        app = new Application();
+        System.out.println("setUp");
+//        app = new Application();
     }
 
     @AfterClass
     public static void tearDown() {
-        app.quit();
+        System.out.println("tearDown");
+//        app.quit();
     }
 
 }
