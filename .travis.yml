@@ -21,7 +21,8 @@ cache:
 # разворачивание на heroku
 deploy:
   provider: heroku
-  api_key: 6c856219-4974-4feb-b4c3-41dfd72aad1e
+  api_key:
+    secure: $HEROKU_API_KEY
   app: sitecalculatingareafigures
 
 # отправка сообщений о неуспешной сборки проекта

@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -Dserver.port=$PORT -jar build/libs/diplom-1.0-SNAPSHOT.jar -Dspring.profiles.active=prod
+web: java $JAVA_OPTS -Dserver.port=$PORT -jar build/*.jar -Dspring.profiles.active=prod
