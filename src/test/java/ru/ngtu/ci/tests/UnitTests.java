@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import ru.ngtu.ci.controller.SquareController;
 
-
 public class UnitTests {
     @Test
     public void squareRectangleTest(){

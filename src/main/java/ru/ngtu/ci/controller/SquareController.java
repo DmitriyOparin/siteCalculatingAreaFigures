@@ -62,5 +62,4 @@ public class SquareController {
         double resultDouble = Math.PI*radiusDouble*radiusDouble;
         return String.format("%.1f", resultDouble);
     }
-
 }

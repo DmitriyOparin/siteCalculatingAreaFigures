@@ -19,4 +19,3 @@ public class SquareCircleTests extends TestBase {
         Assert.assertEquals("Введите коректнные значения", result);
     }
 }
-
