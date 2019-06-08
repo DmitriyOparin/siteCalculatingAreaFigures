@@ -5,14 +5,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CirclePage extends Page {
-    public CirclePage(WebDriver driver) {
+public class RectanglePage extends Page {
+    public RectanglePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
+    @FindBy(name="sideA")
+    public WebElement firstSideInput;
 
-    @FindBy(name="radius")
-    public WebElement radiusInput;
+    @FindBy(name="sideB")
+    public WebElement secondSideInput;
 
     @FindBy(name="calculate")
     public WebElement calculate;
@@ -21,6 +23,6 @@ public class CirclePage extends Page {
     public WebElement result;
 
     public void open() {
-        driver.get("http://localhost:8080/circle");
+        driver.get("http://localhost:5000/rectangle");
     }
 }

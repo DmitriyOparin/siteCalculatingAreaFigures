@@ -19,23 +19,19 @@ public class SquareController {
     }
 
     @GetMapping("/circle")
-    public String squareCircle() {
+    public String openPageSquareCircle() {
         return "circle";
     }
 
     @GetMapping("/rectangle")
-    public String squareRectangle() {
+    public String openPageSquareRectangle() {
         return "rectangle";
     }
 
     @PostMapping("rectangle")
     public String squareRectangle(@RequestParam String sideA, @RequestParam String sideB, Model model){
         if (sideA != null && !sideA.isEmpty() && sideB != null && !sideB.isEmpty()){
-            double sideADouble = Double.parseDouble(sideA);
-            double sideBDouble = Double.parseDouble(sideB);
-            double resultDouble = sideADouble*sideBDouble;
-//            String resultString = String.valueOf(resultDouble);
-            String resultFormatString = String.format("%.1f", resultDouble);
+            String resultFormatString = calculationSquareRectangle(sideA, sideB);
             model.addAttribute("squareRectangle",resultFormatString);
         } else {
             model.addAttribute("squareRectangle","Введите коректнные значения");
@@ -46,16 +42,25 @@ public class SquareController {
     @PostMapping("circle")
     public String squareCircle(@RequestParam String radius, Model model){
         if (radius != null && !radius.isEmpty()){
-            double radiusDouble = Double.parseDouble(radius);
-            double resultDouble = Math.PI*radiusDouble*radiusDouble;
-//            String resultString = String.valueOf(resultDouble);
-            String resultFormatString = String.format("%.1f", resultDouble);
+            String resultFormatString = calculationSquareCircle(radius);
             model.addAttribute("squareCircle",resultFormatString);
         } else {
             model.addAttribute("squareCircle","Введите коректнные значения");
         }
         return "circle";
     }
-// comment for travis, you can to delete
+
+    public String calculationSquareRectangle(String sideA, String sideB){
+        double sideADouble = Double.parseDouble(sideA);
+        double sideBDouble = Double.parseDouble(sideB);
+        double resultDouble = sideADouble*sideBDouble;
+        return String.format("%.1f", resultDouble);
+    }
+
+    public String calculationSquareCircle(String radius){
+        double radiusDouble = Double.parseDouble(radius);
+        double resultDouble = Math.PI*radiusDouble*radiusDouble;
+        return String.format("%.1f", resultDouble);
+    }
 
 }

@@ -19,6 +19,6 @@ public class MainPage extends Page {
 
 
     public void open() {
-        driver.get("http://localhost:8080/");
+        driver.get("http://localhost:5000/");
     }
 }
