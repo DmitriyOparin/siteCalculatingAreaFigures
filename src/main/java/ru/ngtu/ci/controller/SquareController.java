@@ -1,5 +1,6 @@
 package ru.ngtu.ci.controller;
 
+import ru.ngtu.ci.CalculationSquare;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +32,7 @@ public class SquareController {
     @PostMapping("rectangle")
     public String squareRectangle(@RequestParam String sideA, @RequestParam String sideB, Model model){
         if (sideA != null && !sideA.isEmpty() && sideB != null && !sideB.isEmpty()){
-            String resultFormatString = calculationSquareRectangle(sideA, sideB);
+            String resultFormatString = CalculationSquare.calculationSquareRectangle(sideA, sideB);
             model.addAttribute("squareRectangle",resultFormatString);
         } else {
             model.addAttribute("squareRectangle","Введите коректнные значения");
@@ -42,7 +43,7 @@ public class SquareController {
     @PostMapping("circle")
     public String squareCircle(@RequestParam String radius, Model model){
         if (radius != null && !radius.isEmpty()){
-            String resultFormatString = calculationSquareCircle(radius);
+            String resultFormatString = CalculationSquare.calculationSquareCircle(radius);
             model.addAttribute("squareCircle",resultFormatString);
         } else {
             model.addAttribute("squareCircle","Введите коректнные значения");
@@ -50,16 +51,5 @@ public class SquareController {
         return "circle";
     }
 
-    public String calculationSquareRectangle(String sideA, String sideB){
-        double sideADouble = Double.parseDouble(sideA);
-        double sideBDouble = Double.parseDouble(sideB);
-        double resultDouble = sideADouble*sideBDouble;
-        return String.format("%.1f", resultDouble);
-    }
 
-    public String calculationSquareCircle(String radius){
-        double radiusDouble = Double.parseDouble(radius);
-        double resultDouble = Math.PI*radiusDouble*radiusDouble;
-        return String.format("%.1f", resultDouble);
-    }
 }
