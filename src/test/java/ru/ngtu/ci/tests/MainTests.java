@@ -9,7 +9,7 @@ public class MainTests extends TestBase {
         System.out.println("workingLinksTest");
 
 
-        
+
 //        String result;
 //
 //        result = app.openAndGetTitleMainPage();
