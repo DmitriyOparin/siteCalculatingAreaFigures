@@ -9,6 +9,7 @@ public class UnitTests {
     public void squareRectangleTest(){
         SquareController squareController = new SquareController();
         String result = squareController.calculationSquareRectangle("2","2");
+        System.out.println(result);
         Assert.assertEquals("4,0", result);
     }
 
@@ -16,6 +17,7 @@ public class UnitTests {
     public void squareZeroRectangleTest(){
         SquareController squareController = new SquareController();
         String result = squareController.calculationSquareRectangle("0","0");
+        System.out.println(result);
         Assert.assertEquals("0,0", result);
     }
 
@@ -23,6 +25,7 @@ public class UnitTests {
     public void squareCircleTest(){
         SquareController squareController = new SquareController();
         String result = squareController.calculationSquareCircle("2");
+        System.out.println(result);
         Assert.assertEquals("12,6", result);
     }
 
@@ -30,6 +33,7 @@ public class UnitTests {
     public void squareZeroCircleTest(){
         SquareController squareController = new SquareController();
         String result = squareController.calculationSquareCircle("0");
+        System.out.println(result);
         Assert.assertEquals("0,0", result);
     }
 }
