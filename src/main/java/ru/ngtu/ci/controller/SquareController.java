@@ -32,7 +32,8 @@ public class SquareController {
     @PostMapping("rectangle")
     public String squareRectangle(@RequestParam String sideA, @RequestParam String sideB, Model model){
         if (sideA != null && !sideA.isEmpty() && sideB != null && !sideB.isEmpty()){
-            String resultFormatString = CalculationSquare.calculationSquareRectangle(sideA, sideB);
+            CalculationSquare calculationSquare= new CalculationSquare();
+            String resultFormatString = calculationSquare.calculationSquareRectangle(sideA, sideB);
             model.addAttribute("squareRectangle",resultFormatString);
         } else {
             model.addAttribute("squareRectangle","Введите коректнные значения");
@@ -43,7 +44,8 @@ public class SquareController {
     @PostMapping("circle")
     public String squareCircle(@RequestParam String radius, Model model){
         if (radius != null && !radius.isEmpty()){
-            String resultFormatString = CalculationSquare.calculationSquareCircle(radius);
+            CalculationSquare calculationSquare= new CalculationSquare();
+            String resultFormatString = calculationSquare.calculationSquareCircle(radius);
             model.addAttribute("squareCircle",resultFormatString);
         } else {
             model.addAttribute("squareCircle","Введите коректнные значения");
