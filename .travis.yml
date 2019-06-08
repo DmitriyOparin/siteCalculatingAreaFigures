@@ -1,11 +1,8 @@
 language: java
-install: true
 
 jdk:
   - oraclejdk8
 
-script:
-  - ./gradlew build
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -22,9 +19,6 @@ deploy:
   api_key:
     secure: $HEROKU_API_KEY
   app: myproga
-
-
-
 
 # отправка сообщений о неуспешной сборки проекта
 notifications:
