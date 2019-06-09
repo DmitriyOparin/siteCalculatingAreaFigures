@@ -20,34 +20,29 @@ version '1.0'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-dependencies {
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.4.RELEASE'
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.1.4.RELEASE'
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
-    testRuntimeOnly group: 'junit', name: 'junit', version: '4.12'
-    testCompileOnly group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.1.4.RELEASE'
-}
-
-
-
-    sourceSets {
-    integrationTest {
+sourceSets {
+    intTest {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
         java {
             srcDir 'src/integration-test/java'
         }
         resources {
             srcDir 'src/integration-test/resources'
         }
-//        compileClasspath += sourceSets.test.runtimeClasspath
-        compileClasspath += sourceSets.test.compileClasspath
-        runtimeClasspath += sourceSets.test.runtimeClasspath
     }
 }
 
+configurations {
+    intTestImplementation.extendsFrom implementation
+    intTestRuntimeOnly.extendsFrom runtimeOnly
+}
 
-task integrationTest(type: Test) {
-    description = "Runs the integration tests."
-    group = 'verification'
-    testClassesDirs = sourceSets.integrationTest.output.classesDirs
-    classpath = sourceSets.integrationTest.runtimeClasspath
+dependencies {
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.4.RELEASE'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.1.4.RELEASE'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    testCompileOnly group: 'junit', name: 'junit', version: '4.12'
+    intTestImplementation group: 'junit', name: 'junit', version: '4.12'
+    testRuntimeOnly group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.1.4.RELEASE'
 }
