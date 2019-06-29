@@ -3,6 +3,11 @@ language: java
 jdk:
   - oraclejdk8
 
+branches:
+  only:
+  - master
+  - dev
+
 before_install:
   - chmod +x gradlew
   - chmod +x gradle/wrapper/gradle-wrapper.jar
@@ -21,3 +26,13 @@ notifications:
       - www.odo6@yandex.ru
     on_success: never
     on_failure: never #always
+
+addons:
+  sonarcloud:
+    organization: $SONARCLOUD_ORGANIZATION
+    token:
+      secure: $SONARCLOUD_TOKEN
+
+script:
+- sonar-scanner
+- rm -rf .scannerwork
