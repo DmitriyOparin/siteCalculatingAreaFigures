@@ -21,7 +21,7 @@ addons:
 
 script:
   - sonar-scanner
-  -
+
 # разворачивание на heroku
 deploy:
   provider: heroku
