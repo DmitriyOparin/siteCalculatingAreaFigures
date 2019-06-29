@@ -35,6 +35,7 @@ public class UnitTests {
         Assert.assertEquals(expected_result, actual_result);
     }
 
+
     @Test
     public void squareZeroCircleTest() {
         CalculationSquare calculationSquare = new CalculationSquare();
@@ -43,6 +44,7 @@ public class UnitTests {
         System.out.println(actual_result);
         Assert.assertEquals(expected_result, actual_result);
     }
+
 
     @Test
     public void testTest() {
