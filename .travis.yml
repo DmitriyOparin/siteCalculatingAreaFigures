@@ -30,10 +30,10 @@ notifications:
 
 addons:
   sonarcloud:
-    organization: DmitriyOparin
+    organization: "dmitriyoparin-github"
     token:
       secure: $SONARCLOUD_TOKEN
 
 script:
-- sonar-scanner
-- rm -rf .scannerwork
+  - sonar-scanner
+  - rm -rf .scannerwork
