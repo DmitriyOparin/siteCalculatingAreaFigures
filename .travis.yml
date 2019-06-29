@@ -7,12 +7,21 @@ jdk:
 branches:
   only:
   - master
-  - develop
+
 
 before_install:
   - chmod +x gradlew
   - chmod +x gradle/wrapper/gradle-wrapper.jar
 
+addons:
+  sonarcloud:
+    organization: "dmitriyoparin-github"
+    token:
+      secure: $SONARCLOUD_TOKEN
+
+script:
+  - sonar-scanner
+  -
 # разворачивание на heroku
 deploy:
   provider: heroku
@@ -28,12 +37,4 @@ notifications:
     on_success: never
     on_failure: never #always
 
-addons:
-  sonarcloud:
-    organization: "dmitriyoparin-github"
-    token:
-      secure: $SONARCLOUD_TOKEN
 
-script:
-  - sonar-scanner
-  - rm -rf .scannerwork
