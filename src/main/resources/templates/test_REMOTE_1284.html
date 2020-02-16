@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Тестовая</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div>
+    <form method="post" action="rectangle">
+        <input type="text" name="sideA" placeholder="Введите сторону A"/>
+        <input type="text" name="sideB" placeholder="Введите сторону B"/>
+        <button type="submit" name="calculate">Вычислить11</button>
+        <button type="submit" name="calculate">Вычислить000</button>
+        <button type="submit" name="calculate">Вычислить11</button>
+        <button type="submit" name="calculate">Вычислить000</button>
+        <button type="submit" name="calculate">Вычислить111</button>
+        <button type="submit" name="calculate">Вычислить222</button>
+        <button type="submit" name="calculate">Вычислить333</button>
+        <button type="submit" name="calculate">Вычислить444</button>
+        <button type="submit" name="calculate">Вычислить555</button>
+        <button type="submit" name="calculate">Вычислить666</button>
+        <button type="submit" name="calculate">Вычислить777</button>
+    </form>
+</div>
+<div>
+    <p name="result" th:text="${squareRectangle}"/>
+</div>
+<div>
+    <a href="/main">На главную страницу</a>
+</div>
+</body>
+</html>
