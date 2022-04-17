@@ -9,7 +9,7 @@ pipeline {
         string(name: 'BRANCH', defaultValue: 'master', description: 'Branch for tests')
     }
     
-    git([url: 'git://example.com/amazing-project.git', branch: ${params.BRANCH}])
+    git([url: 'https://github.com/DmitriyOparin/siteCalculatingAreaFigures.git', branch: ${params.BRANCH}])
 
     stages {
         stage('Hello') {
