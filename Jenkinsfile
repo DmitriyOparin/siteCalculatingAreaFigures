@@ -6,11 +6,9 @@ pipeline {
     }
     
     parameters {
-        string(name: 'BRANCH', defaultValue: 'master', description: 'Branch for tests')
+        gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
     }
-    
-    git([url: 'git://github.com/DmitriyOparin/siteCalculatingAreaFigures.git', branch: ${params.BRANCH}])
-    
+
     stages {
         stage('Hello') {
             steps {
